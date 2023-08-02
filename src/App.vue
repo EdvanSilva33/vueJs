@@ -1,47 +1,65 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { reactive } from 'vue';
+import Heade from './components/head.vue';
+import Dados from './components/dados.vue';
+import Resultado from './components/result.vue';
+
+const estado = reactive({
+  filtro: 'soma',
+  numb1: '',
+  numb2: '',
+  resultado: '',
+})
+
+const soma = () => {
+  const resultadoSoma = estado.numb1 + estado.numb2
+  estado.resultado = resultadoSoma;
+  return estado.resultado
+}
+
+const subtracao = () => {
+  const resultadoSubtracao = estado.numb1 - estado.numb2
+  estado.resultado = resultadoSubtracao;
+  return estado.resultado
+}
+
+const multiplicacao = () => {
+  const resultadoMultiplicacao = estado.numb1 * estado.numb2
+  estado.resultado = resultadoMultiplicacao;
+  return estado.resultado
+}
+
+const divisao = () => {
+  const resultadoDivisao = estado.numb1 / estado.numb2
+  estado.resultado = resultadoDivisao
+  return estado.resultado
+}
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="container">
+    <Heade />
+    <div class="calculadora">
+      
+      <Dados :valorPrimeiroInput="evente => estado.numb1 = Number(evente.target.value)" :valorSegundoInput="evente => estado.numb2 = Number(evente.target.value)" :filtro="estado.filtro" :selecionaFiltro=" evente => estado.filtro = evente.target.value"/>
+      
+      </div>
+      <Resultado :filtro="estado.filtro" :funcaoSoma="soma()" :funcaoSub="subtracao()" :funcaoMult="multiplicacao()" :funcaoDivisao="divisao()" />
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.container {
+ 
+  width: 2300px;
+
+ margin: 0 auto;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+@media screen and (min-width: 360px) {
+  .container {
+    width: 90%;
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+ 
 }
 </style>
