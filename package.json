@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "sourcemap-codec": "^1.4.8",
     "vue": "^3.3.4"
   },
   "devDependencies": {
