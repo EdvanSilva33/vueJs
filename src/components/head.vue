@@ -7,10 +7,8 @@
 
 <style scoped>
 .topo{
-   
     margin: 0 auto;
     width: 400px;
-
 }
 .text{
     text-align: center;

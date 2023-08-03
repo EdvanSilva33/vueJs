@@ -42,9 +42,6 @@ form{
     padding: 16px;
     justify-content: space-evenly;
     align-items: center;
-   
- 
-
 }
 .dados{
     background-color: aliceblue;
@@ -56,8 +53,6 @@ padding: 5px;
 font-size: 18px;
 border: none;
 text-align: center;
-
-
 }
 .dados input:focus{
     outline: none;

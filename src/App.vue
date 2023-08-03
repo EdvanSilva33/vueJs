@@ -51,15 +51,18 @@ const divisao = () => {
 <style scoped>
 .container {
  
-  width: 2300px;
+  margin: 0 auto;
 
- margin: 0 auto;
+}
+.calculadora{
+  margin: 0 auto;
+  max-width: 400px;
+  width: 100%;
 }
 
 @media screen and (min-width: 360px) {
   .container {
-    width: 90%;
+    width: 80%;
   }
- 
 }
 </style>

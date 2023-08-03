@@ -18,7 +18,6 @@
 
 <style scoped>
 .resultado{
-  
     padding: 16px;
     display: flex;
     margin: 0 auto;
